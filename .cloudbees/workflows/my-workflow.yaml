@@ -5,6 +5,11 @@ on:
   push:
     branches:
       - "**"
+  workflow_dispatch:
+    inputs:
+      whateverNumber:
+        type: number
+        default: 2
 jobs:
   build:
     steps:
