@@ -23,7 +23,7 @@ jobs:
   Approval:
     with:
       approvers: 85d23c34-a472-11ec-916b-42010a83ae13
-      disallowLaunchByUser: false
+      disallowLaunchByUser: true
       instructions: Random instructions2444444
       approvalInputs: |
         {}
