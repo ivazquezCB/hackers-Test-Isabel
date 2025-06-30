@@ -24,7 +24,7 @@ jobs:
     with:
       approvers: 85d23c34-a472-11ec-916b-42010a83ae13
       disallowLaunchByUser: true
-      instructions: Random instructions2444444
+      instructions: Random instructions on June 30, 2025
       approvalInputs: |
         {}
     timeout-minutes: 4320
