@@ -21,11 +21,13 @@ jobs:
     needs:
       - Approval
   Approval:
+    needs:
+      - build
     with:
-      approvers: 85d23c34-a472-11ec-916b-42010a83ae13
+      approvers: 85d23c34-a472-11ec-916b-42010a83ae13,random team ,random2
       disallowLaunchByUser: true
       instructions: Random instructions on June 30, 2025
       approvalInputs: |
         {}
-    timeout-minutes: 4320
+    timeout-minutes: 4000
     delegates: cloudbees-io/manual-approval/custom-job.yml@v1
