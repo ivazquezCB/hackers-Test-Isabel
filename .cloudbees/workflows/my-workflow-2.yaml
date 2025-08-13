@@ -2,11 +2,6 @@ apiVersion: automation.cloudbees.io/v1alpha1
 kind: workflow
 name: My workflow
 on:
-  workflow_dispatch:
-    inputs:
-      Reviewed:
-        type: boolean
-        default: false
   schedule:
     - cron: 0 * * 1 *
 metadata:
@@ -32,14 +27,14 @@ jobs:
         uses: docker://golang:1.20.3-alpine3.17
         name: Hello world
         shell: sh
-    needs: job2Stage1
+    needs: job3Stage1
   job:
     steps:
       - name: Say hello
         uses: docker://golang:1.20.3-alpine3.17
         shell: sh
         run: echo "hello world"
-    needs: job3Stage1
+    needs: job1
   job2:
     steps:
       - name: Say hello
@@ -61,9 +56,8 @@ jobs:
         name: Hello Isabel
         shell: sh
   job3Stage1:
-    needs:
-      - job1
     steps:
       - run: echo "hello Job 3!!!"
         uses: docker://golang:1.20.3-alpine3.17
         shell: sh
+    needs: job2Stage1
